@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IP Address Blacklist</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    .container {
+      max-width: 400px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mb-4">Remove IP Block</h1>
+    <div class="form-group">
+      <label for="ipAddress">IP Address:</label>
+      <input type="text" class="form-control" id="ipAddress" placeholder="Enter IP Address">
+    </div>
+    <button class="btn btn-primary" onclick="changeIP()">Remove</button>
+    <p class="mt-3" id="message" style="display: none;"></p>
+  </div>
+  <script>
+    function changeIP() {
+      var ipAddress = document.getElementById('ipAddress').value;
+      document.getElementById('submitButton').innerHTML = 'Removing IP Block...';
+      document.getElementById('message').style.display = 'none';
+
+      // Simulate submission success
+      setTimeout(function() {
+        document.getElementById('submitButton').innerHTML = 'Remove';
+        document.getElementById('message').innerHTML = 'Removed IP Block: ' + ipAddress;
+        document.getElementById('message').style.display = 'block';
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
