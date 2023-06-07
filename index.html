@@ -2,24 +2,77 @@
 <html>
 <head>
   <title>IP Address Blacklist</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+  
+    h1 {
+      color: #333;
+    }
+  
     .container {
       max-width: 400px;
-      margin-top: 50px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  
+    .form-group {
+      margin-bottom: 20px;
+    }
+  
+    .form-group label {
+      display: block;
+      font-weight: bold;
+    }
+  
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+  
+    .btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  
+    .btn:hover {
+      background-color: #0056b3;
+    }
+  
+    #message {
+      display: none;
+      color: #008000;
+      font-weight: bold;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1 class="mb-4">Remove IP Block</h1>
+    <h1>Remove IP Block</h1>
     <div class="form-group">
       <label for="ipAddress">IP Address:</label>
-      <input type="text" class="form-control" id="ipAddress" placeholder="Enter IP Address">
+      <input type="text" id="ipAddress" placeholder="Enter IP Address">
     </div>
-    <button class="btn btn-primary" onclick="changeIP()">Remove</button>
-    <p class="mt-3" id="message" style="display: none;"></p>
+    <button class="btn" id="submitButton" onclick="changeIP()">Remove</button>
+    <p id="message"></p>
   </div>
+  
   <script>
     function changeIP() {
       var ipAddress = document.getElementById('ipAddress').value;
